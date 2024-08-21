@@ -10,9 +10,9 @@ Welcome to the MetroKUBIKO API documentation. This API provides various endpoint
 
 All API requests are made to the following base URL:
 
-'''plaintext
+```plaintext
 https://us-central1-copres-firebase.cloudfunctions.net/app-api
-'''
+```
 
 ### Authentication
 
@@ -30,25 +30,25 @@ This endpoint generates a token using the user's email and password, which is re
 
 ### Params
 
-'''typescript
+```typescript
 interface Params {
     email: string;
     password: string;
 }
-'''
+```
 
 ### Response
 
-'''typescript
+```typescript
 export type Response = {
   token: string;
   expires: Date;
 }
-'''
+```
 
 ### Example Request
 
-'''http
+```http
 POST https://us-central1-copres-firebase.cloudfunctions.net/app-api/auth/get-token
 Content-Type: application/json
 
@@ -56,24 +56,24 @@ Content-Type: application/json
   "email": "user@example.com",
   "password": "yourPassword"
 }
-'''
+```
 
 ### Example Response
 
-'''json
+```json
 {
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
   "expires": "2024-09-01T00:00:00.000Z"
 }
-'''
+```
 
 ### Usage
 
 Once you have obtained the token, include it in the `Authorization` header of your requests to authenticate.
 
-'''http
+```http
 Authorization: Bearer YOUR_TOKEN_HERE
-'''
+```
 
 With the token, you can now interact with other endpoints provided by the MetroKUBIKO API.
 

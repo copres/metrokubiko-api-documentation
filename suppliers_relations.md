@@ -73,22 +73,48 @@ type ISupplierDocumentType =
 ## ISupplierDocument Interface
 ```typescript
 interface ISupplierDocument {
-  id: string;
-  type: ISupplierDocumentType;
-  date: Date;
-  code: string;
-  createdAt: Date;
-  consecutive: number;
+  id: string
+  name: string
+  type: ISupplierDocumentType
+  date: Date
+  code: string
+  createdAt: Date
+  consecutive: number
   customer: {
-    id: string | null;
-    name: string;
-  };
-  platform: string;
-  project_id: string;
-  cost_center: string;
-  category: ISupplierDocumentCategory;
-  sub_total_value: number;
-  tax: number;
+    id: string | null
+    name: string
+  }
+  platform: string
+  project_id: string
+  cost_center: string
+  category: ISupplierDocumentCategory
+  sub_total_value: number
+  total_value: number
+
+  project_tax: {
+    percentage: number
+    base: number
+    value: number
+    name: string
+  }
+  tax: {
+    percentage: number
+    base: number
+    value: number
+    name: string
+  }
+  retention_1: {
+    percentage: number
+    base: number
+    value: number
+    name: string
+  }
+  retention_2: {
+    percentage: number
+    base: number
+    value: number
+    name: string
+  }
 }
 ```
 
@@ -137,12 +163,33 @@ interface Response {
 ```typescript
 interface CreateDocumentRequest {
   document: {
-    type: ISupplierDocumentType;
-    project_id: string;
-    cost_center: string;
-    category_code: string;
-    sub_total_value: number;
-    tax: number;
+    name: string
+    type: ISupplierDocumentType
+    project_id: string
+    cost_center: string
+    category_code: string
+    sub_total_value: number
+    tax: number
+    project_tax: {
+      percentage: number // If the project doesn't have a specific tax percentage, the value from project_tax.percentage will be used as the default.
+      base: number
+    }
+    // If any of the tax or retention values are not applicable, they should be set to zero and left as empty strings.
+    tax: {
+      percentage: number
+      base: number
+      name: string
+    }
+    retention_1: {
+      percentage: number
+      base: number
+      name: string
+    }
+    retention_2: {
+      percentage: number
+      base: number
+      name: string
+    }
   };
 }
 ```

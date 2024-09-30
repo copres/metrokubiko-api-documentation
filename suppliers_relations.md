@@ -43,7 +43,7 @@ interface Response {
 | -Key-           | -Value-                                       |
 |-----------------|-----------------------------------------------|
 | **Method**      | **GET**                                       |
-| **Path**        | `https://us-central1-copres-firebase.cloudfunctions.net/app-api/suppliers/:id`                          |
+| **Path**        | `https://us-central1-copres-firebase.cloudfunctions.net/app-api/suppliers_relations/:id`                          |
 | **Content-Type**| `application/json`                            |
 | **Authorization**| `Bearer YOUR_TOKEN_HERE`                     |
 
@@ -123,7 +123,7 @@ interface ISupplierDocument {
 | -Key-           | -Value-                                       |
 |-----------------|-----------------------------------------------|
 | **Method**      | **GET**                                       |
-| **Path**        | `https://us-central1-copres-firebase.cloudfunctions.net/app-api/suppliers/:id/documents/`               |
+| **Path**        | `https://us-central1-copres-firebase.cloudfunctions.net/app-api/suppliers_relations/:id/documents/`               |
 | **Content-Type**| `application/json`                            |
 | **Authorization**| `Bearer YOUR_TOKEN_HERE`                     |
 
@@ -139,7 +139,7 @@ interface Response {
 | -Key-           | -Value-                                       |
 |-----------------|-----------------------------------------------|
 | **Method**      | **GET**                                       |
-| **Path**        | `https://us-central1-copres-firebase.cloudfunctions.net/app-api/suppliers/:id/documents/:document_id`   |
+| **Path**        | `https://us-central1-copres-firebase.cloudfunctions.net/app-api/suppliers_relations/:id/documents/:document_id`   |
 | **Content-Type**| `application/json`                            |
 | **Authorization**| `Bearer YOUR_TOKEN_HERE`                     |
 
@@ -155,7 +155,7 @@ interface Response {
 | -Key-           | -Value-                                       |
 |-----------------|-----------------------------------------------|
 | **Method**      | **POST**                                      |
-| **Path**        | `https://us-central1-copres-firebase.cloudfunctions.net/app-api/suppliers/:id/documents/`               |
+| **Path**        | `https://us-central1-copres-firebase.cloudfunctions.net/app-api/suppliers_relations/:id/documents/`               |
 | **Content-Type**| `application/json`                            |
 | **Authorization**| `Bearer YOUR_TOKEN_HERE`                     |
 
@@ -219,7 +219,7 @@ interface IAssignedProject {
 | -Key-           | -Value-                                       |
 |-----------------|-----------------------------------------------|
 | **Method**      | **GET**                                       |
-| **Path**        | `https://us-central1-copres-firebase.cloudfunctions.net/app-api/suppliers/:id/assigned_projects/`       |
+| **Path**        | `https://us-central1-copres-firebase.cloudfunctions.net/app-api/suppliers_relations/:id/assigned_projects/`       |
 | **Content-Type**| `application/json`                            |
 | **Authorization**| `Bearer YOUR_TOKEN_HERE`                     |
 

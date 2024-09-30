@@ -27,7 +27,7 @@ interface ISupplierRelation {
 | -Key-           | -Value-                                       |
 |-----------------|-----------------------------------------------|
 | **Method**      | **GET**                                       |
-| **Path**        | `https://us-central1-copres-firebase.cloudfunctions.net/app-api/suppliers`                              |
+| **Path**        | `https://us-central1-copres-firebase.cloudfunctions.net/app-api/suppliers_relations`                              |
 | **Content-Type**| `application/json`                            |
 | **Authorization**| `Bearer YOUR_TOKEN_HERE`                     |
 

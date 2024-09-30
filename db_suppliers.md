@@ -17,6 +17,15 @@ export interface ISupplier {
   createdAt: Date
   updatedAt: Date
 }
+
+export interface ISupplierDB {
+  id: string
+  name: string
+  city: string
+  country: string
+  active: boolean
+}
+
 ```
 
 # List Suppliers
@@ -24,7 +33,7 @@ export interface ISupplier {
 | -Key-| -Value- |
 |-----------|----------|
 | **Method** | **GET** |
-| **Path** | https://us-central1-copres-firebase.cloudfunctions.net/app-api/db_suppliers/DB_ID /suppliers|
+| **Path** | https://us-central1-copres-firebase.cloudfunctions.net/app-api/db_suppliers/:db_id/suppliers|
 | **Content-Type**   | application/json |
 | **Authorization**   | Bearer YOUR_TOKEN_HERE |
 
@@ -42,7 +51,7 @@ interface Response {
 | -Key-| -Value- |
 |-----------|----------|
 | **Method** | **GET** |
-| **Path** | https://us-central1-copres-firebase.cloudfunctions.net/app-api//db_suppliers/DB_ID/suppliers/SUPPLIER_ID|
+| **Path** | https://us-central1-copres-firebase.cloudfunctions.net/app-api/db_suppliers/:db_id/suppliers/:supplier_id|
 | **Content-Type**   | application/json |
 | **Authorization**   | Bearer YOUR_TOKEN_HERE |
 
@@ -52,5 +61,41 @@ interface Response {
 ```typescript
 interface Response {
   supplier: ISupplier
+}
+```
+
+# List Suppliers DBs
+
+| -Key-| -Value- |
+|-----------|----------|
+| **Method** | **GET** |
+| **Path** | https://us-central1-copres-firebase.cloudfunctions.net/app-api/db_suppliers/|
+| **Content-Type**   | application/json |
+| **Authorization**   | Bearer YOUR_TOKEN_HERE |
+
+
+
+## Response
+```typescript
+interface Response {
+  suppliers_dbs: ISupplierDB[]
+}
+```
+
+# Get Suppliers DB
+
+| -Key-| -Value- |
+|-----------|----------|
+| **Method** | **GET** |
+| **Path** | https://us-central1-copres-firebase.cloudfunctions.net/app-api/db_suppliers/:db_id|
+| **Content-Type**   | application/json |
+| **Authorization**   | Bearer YOUR_TOKEN_HERE |
+
+
+
+## Response
+```typescript
+interface Response {
+  supplier_db: ISupplierDB
 }
 ```
